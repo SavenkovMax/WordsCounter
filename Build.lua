@@ -1,8 +1,7 @@
--- premake5.lua
-workspace "New Project"
+workspace "Words counter"
    architecture "x64"
    configurations { "Debug", "Release", "Dist" }
-   startproject "App"
+   startproject "WCounterApp"
 
    -- Workspace-wide build options for MSVC
    filter "system:windows"
@@ -11,7 +10,7 @@ workspace "New Project"
 OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
 group "Core"
-	include "Core/Build-Core.lua"
+	include "WCounterCore/Build-Core.lua"
 group ""
 
-include "App/Build-App.lua"
+include "WCounterApp/Build-App.lua"
