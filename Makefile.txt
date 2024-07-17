@@ -1,13 +1,13 @@
-EXE=wordcount
+EXE=wordcounter
 CXXFLAGS = -g -O2 -std=c++20 -Werror
 
 all: $(EXE)
 
-$(EXE): main.cpp wordcount.o 
-	g++ $(CXXFLAGS) wordcount.o -o $(EXE) main.cpp
+$(EXE): main.cpp Wordcounter.o 
+	g++ $(CXXFLAGS) Wordcounter.o -o $(EXE) main.cpp
 
-wordcount.o: wordcount.hpp wordcount.cpp
-	g++ $(CXXFLAGS) -c wordcount.cpp
+wordcount.o: Wordcount.hpp Wordcount.cpp
+	g++ $(CXXFLAGS) -c Wordcount.cpp
 
 clean:
 	rm -rf $(EXE).dSYM $(EXE) *.o
